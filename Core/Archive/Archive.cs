@@ -116,6 +116,7 @@ namespace OpenVIII
             /// <param name="keepExtension">Extensions for FI FL FS are all different. Where ZZZ would be just one extension</param>
             public void SetFilename(string path, bool keepExtension = false)
             {
+                path = Extended.GetUnixFullPath(path);
                 if (Directory.Exists(path))
                 {
                     IsDir = true;
